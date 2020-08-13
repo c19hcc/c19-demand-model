@@ -1,0 +1,162 @@
+body {
+  background-color: white;
+  font-family: trade-gothic-next, sans-serif;
+}
+
+.btn-default {
+  background-color: #005b94;
+  border-radius: 0;
+  border: 2px solid #005b94;
+  text-transform: uppercase;
+  font-family: trade-gothic-next-condensed, sans-serif;
+}
+
+.btn-default:hover {
+  background-color: white;
+  border: 2px solid #005b94;
+  color: #005b94;
+}
+
+.btn-reset {
+  background-color: white;
+  border-radius: 0;
+  color: #005b94;
+
+  border: 2px solid #005b94;
+  text-transform: uppercase;
+  font-family: trade-gothic-next-condensed, sans-serif;
+}
+
+.btn-reset:hover {
+  background-color: #005b94;
+  border: 2px solid #005b94;
+  color: white;
+}
+
+.well {
+  background-color: white;
+  box-shadow: 0 14px 20px rgba(0, 0, 0, 0.25), 0 5px 10px rgba(0, 0, 0, 0.22);
+}
+
+.dt-button {
+  background-color: #005b94 !important;
+  background-image: none !important;
+  border-radius: 0 !important;
+  border: 2px solid #005b94 !important;
+  text-transform: uppercase !important;
+  color: white !important;
+  font-family: trade-gothic-next-condensed, sans-serif;
+}
+
+.dt-button:hover {
+  background-color: white !important;
+  background-image: none !important;
+  border-radius: 0 !important;
+  border: 2px solid #005b94 !important;
+  text-transform: uppercase !important;
+  color: #005b94 !important;
+  font-family: trade-gothic-next-condensed, sans-serif;
+}
+
+.dwnld-default{
+  color: #005b94 !important;
+  font-family: trade-gothic-next, sans-serif;
+  text-align: center;
+}
+
+.dwnld-default > a{
+  color: #005b94 !important;
+  font-family: trade-gothic-next, sans-serif;
+  text-align: center;
+}
+
+.navbar {
+  background-color: white;
+  border-bottom: 2px solid #d6d6d6;
+}
+
+.navbar-brand {
+  color: #0d2f4f !important;
+  font-family: trade-gothic-next-condensed, sans-serif;
+  font-weight: bold;
+}
+
+.navbar-nav > li > a {
+  color: #0d2f4f !important;
+  font-family: trade-gothic-next-condensed, sans-serif;
+  font-weight: bold;
+}
+
+.navbar-nav > li > a:hover {
+  color: white !important;
+  background-color: #0d2f4f !important;
+  font-family: trade-gothic-next-condensed, sans-serif;
+  font-weight: bold;
+}
+
+.navbar-nav > .active > a {
+  color: white !important;
+  font-family: trade-gothic-next-condensed, sans-serif;
+  font-weight: bold;
+  background-color: #005b94 !important;
+}
+
+.navbar-nav > .active > a:hover {
+  color: white !important;
+  font-family: trade-gothic-next-condensed, sans-serif;
+  font-weight: bold;
+  background-color: #005b94 !important;
+}
+
+.dataTables_paginate {
+  margin-top: 10px;
+  border: 1.5px solid #d6d6d6;
+  padding-top: 0 !important;
+}
+
+.paginate_button {
+  border: 1px solid #d6d6d6 !important;
+  margin: 0 !important;
+  border-radius: 0;
+  text-transform: uppercase;
+  font-family: trade-gothic-next-condensed, sans-serif;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  background-color: #005b94 !important;
+  background-image: none !important;
+  border-radius: 0 !important;
+  text-transform: uppercase !important;
+  color: white !important;
+  font-family: trade-gothic-next-condensed, sans-serif;
+}
+
+.dataTables_wrapper:hover
+  .dataTables_paginate:hover
+  .paginate_button.current:hover {
+  background-color: #005b94 !important;
+  background-image: none !important;
+  border-radius: 0 !important;
+  text-transform: uppercase !important;
+  color: white !important;
+  font-family: trade-gothic-next-condensed, sans-serif;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  color: black !important;
+  font-family: trade-gothic-next-condensed, sans-serif;
+}
+
+.dataTables_wrapper:hover .dataTables_paginate:hover .paginate_button:hover {
+  background-color: #0d2f4f !important;
+  background-image: none !important;
+  border-radius: 0 !important;
+  text-transform: uppercase !important;
+  color: white !important;
+}
+
+input[type='search'] {
+  border: 2px solid #005b94;
+  border-radius: 10px;
+  padding: 3px 5px;
+}
