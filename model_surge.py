@@ -216,7 +216,7 @@ def surge_model(fips_list, full_days=360, rank=0):
 
     return data
 
-def calculate_case_distribution(cases_data, perc_admitted_crit_care=0.25, perc_crit_care_vent=0.60,
+def calculate_case_distribution(cases_data, perc_admitted_crit_care=0.2952, perc_crit_care_vent=0.1769,
                                 los_non_crit_care=3, los_crit_care=7, los_crit_care_vent=11):
     '''
     Calculate patient severity distribution based on defined proportions and length of stay
@@ -242,7 +242,7 @@ def calculate_case_distribution(cases_data, perc_admitted_crit_care=0.25, perc_c
         contains distribution of patient type by date.
 
     '''
-
+    
     #Concatenate known data with predicted data
     y = cases_data['y'].to_numpy()
     y_pred = cases_data['y_pred'].to_numpy()
@@ -254,12 +254,12 @@ def calculate_case_distribution(cases_data, perc_admitted_crit_care=0.25, perc_c
     data[data < 0] = 0
 
     # Caluclate number of new cases for each day
-    admitted_hospital = data
-    admitted_crit_care = admitted_hospital*perc_admitted_crit_care
-    admitted_crit_care = np.round(admitted_crit_care)
-    admitted_non_crit_care = admitted_hospital - admitted_crit_care
-    admitted_crit_care_vent = np.round(admitted_crit_care*perc_crit_care_vent)
-    admitted_crit_care = admitted_crit_care - admitted_crit_care_vent
+    admitted_hospital = np.round(data * 0.0985)
+    # admitted_hospital = data
+
+    admitted_crit_care_vent = np.round(admitted_hospital*perc_crit_care_vent)
+    admitted_crit_care = np.round(admitted_hospital*perc_admitted_crit_care) - admitted_crit_care_vent
+    admitted_non_crit_care = admitted_hospital - admitted_crit_care - admitted_crit_care_vent
 
     # Calculate population of each patient type
     los_max = np.max([los_non_crit_care, los_crit_care, los_crit_care_vent])

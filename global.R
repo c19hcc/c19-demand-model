@@ -2,9 +2,10 @@ library(dplyr)
 library(reticulate)
 library(lubridate)
 library(tidyr)
-
 source_python("model.py")
 source_python("model_surge.py")
+
+
 
 ## Support Functions
 lastMonday <- function(x) x - as.numeric(x-1+4)%%7
@@ -14,13 +15,16 @@ isSingleString <- function(input) {
 
 ## Global Variables
 county <- read.csv('data/county_info.csv', colClasses=c("countyFIPS"="character"), as.is = TRUE)
-pharma_selector <- c("Dexmedetomidine",
-                      "Propofol",
-                      "Midazolam",
-                      "Aspirin",
-                      "Cisatracurium",
-                      "Rocuronium",
-                      "Actemra")
+pharma_selector <- c("Actemra",
+                     "Aspirin",
+                     "Cisatracurium",
+                     "Dexamethasone",
+                     "Dexmedetomidine",
+                     "Midazolam",
+                     "Propofol",
+                     "Remdesivir",
+                     "Rocuronium"
+                     )
 pharma_selector <- sort(pharma_selector)
 
 item_selector <- c("Surg/Proc. Mask"="Surg/Proc. Mask", 
@@ -50,7 +54,9 @@ item_dict <- list(
   "Aspirin" = "Aspirin",
   "Cisatracurium" = "Cisatracurium",
   "Rocuronium" = "Rocuronium",
-  "Actemra" = "Actemra"
+  "Actemra" = "Actemra",
+  "Remdesivir" = "Remdesivir",
+  "Dexamethasone" = "Dexamethasone"
 )
 
 item_table_names <- list(
@@ -69,7 +75,9 @@ item_table_names <- list(
   "Aspirin" = "Aspirin [mg]",
   "Cisatracurium" = "Cisatracurium [mg]",
   "Rocuronium" = "Rocuronium [mg]",
-  "Actemra" = "Actemra [mg]"
+  "Actemra" = "Actemra [mg]",
+  "Remdesivir" = "Remdesivir [mg]",
+  "Dexamethasone" = "Dexamethasone [mg]"
 )
 
 param = list(

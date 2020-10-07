@@ -210,7 +210,7 @@ function(input, output, session) {
       plot2 <- plot_ly(
         x = daily_agg[["date"]],
         y = daily_agg[["pop_non_crit_care"]],
-        name='Non-critical',
+        name='Hospitalized',
         type = 'scatter',
         mode = 'lines') %>%
         layout(title='COVID-19 Patient Distribution',
@@ -220,10 +220,10 @@ function(input, output, session) {
         add_trace(x=daily_agg[["date"]],
                   y=daily_agg[["pop_crit_care"]],
                   mode='lines',
-                  name='Critical') %>%
+                  name='In ICU') %>%
         add_trace(x=daily_agg[["date"]],
                   y=daily_agg[["pop_crit_care_vent"]],
-                  name='Critical w/ Vent.',
+                  name='On Ventilator',
                   mode='lines')
       output$plot_patient_dist <- renderPlotly(plot2)
       
@@ -298,7 +298,7 @@ function(input, output, session) {
         x = daily_agg[["date"]],
         y = daily_agg[["pop_non_crit_care"]],
         legendgroup='1',
-        name='Non-critical',
+        name='Hospitalized',
         type = 'scatter',
         mode = 'lines') %>%
         add_trace(x = daily_agg[["date"]],
@@ -329,7 +329,7 @@ function(input, output, session) {
                   mode='lines',
                   line = list(color = 'rgba(255,127,14,1)'),
                   legendgroup='2',
-                  name='Critical') %>%
+                  name='In ICU') %>%
         add_trace(x = daily_agg[["date"]],
                   y = daily_agg[["pop_crit_care_high"]],
                   type = 'scatter',
@@ -351,7 +351,7 @@ function(input, output, session) {
                   name = 'Lower Bound')%>%
         add_trace(x=daily_agg[["date"]],
                   y=daily_agg[["pop_crit_care_vent"]],
-                  name='Critical w/ Vent.',
+                  name='On Ventilator',
                   legendgroup='3',
                   line = list(color = 'rgba(44,160,44,1)'),
                   mode='lines')%>%
